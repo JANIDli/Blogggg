@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 class Nav extends Component {
   render() {
     return (
-      <nav className="nav-container p-12 sticky top-0">
+      <nav className="nav-container p-12 sticky top-0 z-10">
         <div className="container mx-auto flex justify-between items-center">
           <div className='nav-band'>
             <a href="#" className="text-white text-lg font-bold">JSEx</a>

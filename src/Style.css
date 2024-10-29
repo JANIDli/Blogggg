@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
 *{
     margin: 0;
     padding:0;
@@ -10,10 +10,18 @@
 }
 .nav-container{
     background-image: linear-gradient(to right, #360033 0%, #0b8793  51%, #360033  100%);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it stays above other content */
+    background-color: #333; /* Adjust to match your theme */
+    padding: 50px 0; 
 }
 .nav-band a{
     font-size: 50px;
 }
+
 .hero-header h1{
     font-size: 200px;
     /* background: url(https://www.yachtandboat.com/wp-content/uploads/2018/12/hero-image-2.jpg)   -20px -20px no-repeat;
@@ -306,14 +314,17 @@
 
 }
 /* Blog page Css 8*/
-.bolog-container{
+.blog-header-container{
   display: grid;
-  align-items: center;
-  justify-content: space-between;
-  grid-template-columns: 3/1fr;
+  grid-template-columns: 1fr auto;
+  background-image: url('/public/img.jpg');
+  background-size: cover;
+  padding: 90px;
+
+  
 
 }
-.newshead{
+.header-image{
   grid-column: 1/4;
   row-gap:2px ;
   padding: 90px;
@@ -322,5 +333,114 @@
 }
 .bloging-search{
   grid-column: 3/4;
+
+}
+.blogone{
+  grid-column: 1/2;
+}
+.blogtree{
+  grid-column: 3/4;
+}
+.search-filter-container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-form input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.search-form button {
+  background-color: #9370DB; /* Soft purple */
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-left: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-form button i {
+  font-size: 16px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-button {
+  background-color: #9370DB; /* Soft purple */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filter-button:hover {
+  background-color: #7B68EE; /* Slightly darker purple */
+}
+
+.blog-post-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Adjust the gap between columns as needed */
+}
+
+.blog-one {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+
+.CP{
+  font-family: "Rubik Wet Paint", system-ui;
+  font-weight: 450;
+  font-style: normal;
+}
+
+/* BLLOG POST CSS  */
+
+.blog-post-img {
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center;     /* Centers the image vertically */
+  height: 70vh;           /* Optional: Full viewport height */
+}
+
+.blog-post-img img {
+  max-width: 50%; /* Makes the image responsive */
+  height: auto;    /* Maintains aspect ratio */
+}
+.post-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+
+}
+.filtor{
+  justify-content: center;
+  align-items: center;
+}
+.Post-about{
+  grid-column: 2/4;
+  justify-content: center;
+  align-items: center;
 
 }
