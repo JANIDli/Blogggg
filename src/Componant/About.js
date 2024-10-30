@@ -1,25 +1,48 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export class About extends Component {
+  componentDidMount() {
+    AOS.init({
+      duration: 1000, // Animation duration
+      once: true, // Whether animation should happen only once - while scrolling down
+    });
+  }
+
   render() {
     return (
-      <div className='about-container p-10 bg-black'>
-        <div className="about-intro">
-            <h1 className='about-header text-white text-center text-5xl animate-jump-in'>|A  b  o  u  t|</h1>
-            <br />
-            <p className='text-white'><span className='text-5xl	font-bold	'>Welcome</span> to JSex, your ultimate destination for staying updated on the latest technology trends and news. At JSEx, we're dedicated to serving the dynamic tech community with fresh insights, cutting-edge developments, and informed perspectives.
-
-            Whether you're a seasoned professional, an aspiring developer, or simply tech-curious, our platform is designed to be your go-to resource for staying ahead in the ever-evolving world of technology. From breakthrough innovations to industry analysis, we strive to deliver content that informs, inspires, and empowers our readers.
-
-            What sets us apart is our commitment to providing timely and relevant updates on the most pressing topics shaping the tech landscape. Through a blend of expert analysis, comprehensive coverage, and engaging storytelling, we aim to foster a vibrant community where ideas are shared, discussions are sparked, and connections are made.
-
-            Join us on this exciting journey as we explore the endless possibilities of technology together. Whether you're here to discover the latest advancements, engage in lively debates, or connect with like-minded individuals, [Your Website Name] is your trusted companion in navigating the digital frontier.
-
-            Stay tuned, stay inspired, and let's embark on this exhilarating tech odyssey together!</p>
+      <section className="bg-black py-12">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white" data-aos="fade-down">About JSEx</h2>
+          <p className="text-base md:text-lg mb-8 text-gray-300" data-aos="fade-up">
+            Welcome to JSEx, your ultimate destination for staying updated on the latest technology trends and news. At JSEx, we're dedicated to serving the dynamic tech community with fresh insights, cutting-edge developments, and informed perspectives.
+          </p>
+          
+          <div className="flex flex-col md:flex-row justify-center gap-8">
+            <div className="bg-gray-800 p-6 rounded shadow-md" data-aos="fade-right">
+              <h3 className="text-xl md:text-2xl font-semibold mb-2 text-white">Why Choose Us?</h3>
+              <p className="text-gray-300">
+                Our user-friendly platform, extensive catalog, and competitive rates make us a go-to destination for tech enthusiasts. We prioritize quality by ensuring all content is up-to-date and relevant for a perfect learning experience.
+              </p>
+            </div>
+            <div className="bg-gray-800 p-6 rounded shadow-md" data-aos="fade-up">
+              <h3 className="text-xl md:text-2xl font-semibold mb-2 text-white">Our Mission</h3>
+              <p className="text-gray-300">
+                Our mission is to connect people with the power of technology through insightful content. We aim to make top-rated tech news and trends accessible to everyone, fostering a community of informed and inspired individuals.
+              </p>
+            </div>
+            <div className="bg-gray-800 p-6 rounded shadow-md" data-aos="fade-left">
+              <h3 className="text-xl md:text-2xl font-semibold mb-2 text-white">How We Operate</h3>
+              <p className="text-gray-300">
+                With a streamlined content delivery process, JSEx allows you to browse by category, latest updates, or popularity. Our easy-to-navigate platform makes staying informed hassle-free, so you can focus on leveraging the latest tech trends.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    )
+      </section>
+    );
   }
 }
 
-export default About
+export default About;

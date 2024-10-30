@@ -4,11 +4,9 @@ import AboutPage from './Page/AboutPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ServicePage from './Page/ServicePage';
 import Registration from './Page/Registration';
-import BlogList from './Page/BlogList';
-import Blog from './Page/Blog';
-import { ThemeProvider } from './ThemeContext'; // Import the ThemeProvider
-import BlogPost from './Componant/BlogPost'
-
+import { ThemeProvider } from './ThemeContext';
+import BlogPost from './Componant/BlogPost'; // Ensure the path is correct
+import SearchFilter from './Page/Blog';
 
 function App() {
   return (
@@ -19,14 +17,11 @@ function App() {
           <Route exact path='about' element={<AboutPage />} />
           <Route exact path='service' element={<ServicePage />} />
           <Route exact path='register' element={<Registration />} />
-          <Route exact path='Blog' element={<BlogList />} />
-          <Route exact path='test' element={<Blog />} />
-          <Route exact path='BlogP' element={<BlogPost />} />
-
+          <Route exact path='blog' element={<SearchFilter />} /> {/* Updated path */}
+          <Route exact path='blog/:id' element={<BlogPost />} /> {/* Dynamic route for blog post */}
         </Routes>
       </Router>
     </ThemeProvider>
-    
   );
 }
 

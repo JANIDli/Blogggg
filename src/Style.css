@@ -444,3 +444,28 @@
   align-items: center;
 
 }
+
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  font-size: 2rem; /* Larger text */
+  color: #555; /* Color of the loading text */
+}
+
+.blog-one {
+  transition: transform 0.3s ease-in-out;
+}
+
+.blog-one:hover {
+  transform: scale(1.05);
+}
+
+.blog-one {
+  transition: transform 0.3s ease-in-out;
+}
+
+.blog-one:hover {
+  transform: scale(1.05);
+}
