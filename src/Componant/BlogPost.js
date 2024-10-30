@@ -47,19 +47,19 @@ export const BlogPost = () => {
       <Nav />
 
       {/* Blog Title and Meta */}
-      <div className="post-title p-5 text-3xl text-center font-bold">
+      <div className="post-title p-3 text-2xl text-center font-bold">
         <h1>{blog.title}</h1>
       </div>
       
-      <div className="post-meta p text-center text-gray-500 text-sm">
+      <div className="post-meta p-2 text-center text-gray-500 text-sm">
         <p>By <span className="font-medium">{blog.author}</span> | Published on {blog.date} | Category: <span className="font-medium">{blog.category}</span></p>
       </div>
 
-      <div className="blog-post-img">
-        <img src={blog.image} alt={blog.title} className="w-full h-auto object-cover" />
+      <div className="blog-post-img p-2">
+        <img src={blog.image} alt={blog.title} className="w-full h-96 object-cover rounded-lg shadow-md" />
       </div>
 
-      <div className="post-content p-5">
+      <div className="post-content p-3 max-w-4xl mx-auto">
         <div className="intro text-lg text-gray-700 font-light">
           <div dangerouslySetInnerHTML={{ __html: blog.content }} />
         </div>

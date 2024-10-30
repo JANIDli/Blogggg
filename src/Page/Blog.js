@@ -15,7 +15,7 @@ const SearchFilter = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/blogs.xml'); // Make sure this path is correct
+        const response = await fetch('/blogs.xml'); // Ensure this path is correct
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -70,7 +70,7 @@ const SearchFilter = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h1 className='text-center text-3xl opacity-60 text-white font-bold'>
+          <h1 className='b-header text-center text-3xl md:text-4xl opacity-80 text-white font-bold'>
             Dive into our latest articles and insights, crafted to inspire and inform.
           </h1>
         </motion.div>

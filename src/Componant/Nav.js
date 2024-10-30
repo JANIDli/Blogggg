@@ -16,26 +16,27 @@ class Nav extends Component {
     const { isMenuOpen } = this.state;
 
     return (
-      <nav className="nav-container p-4 sticky top-0 z-10 bg-gray-800">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className='nav-brand'>
+      <nav className="nav-container sticky top-0 z-20 bg-gray-800 shadow-md">
+        <div className="container mx-auto flex justify-between items-center py-1 px-5">
+          {/* Brand */}
+          <div className="nav-brand">
             <a href="#" className="text-white text-6xl font-bold">JSEx</a>
           </div>
-      
-          <div className="hidden md:block">
+          
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-6">
             <ul className="flex space-x-4">
-              <li><Link className='text-white' to="/">HOME</Link></li>
-              <li><Link className='text-white' to="/about">ABOUT</Link></li>
-              <li><Link className='text-white' to="/service">SERVICE</Link></li>
-              <li><Link className='text-white' to="/blog">BLOG</Link></li>
-              <li><Link className='text-white' to="/contact">CONTACT</Link></li>
-              <li><Link className='text-white' to="/store">JSEx STORE</Link></li>
+              <li><Link className="text-white hover:text-gray-300 transition" to="/">HOME</Link></li>
+              <li><Link className="text-white hover:text-gray-300 transition" to="/about">ABOUT</Link></li>
+              <li><Link className="text-white hover:text-gray-300 transition" to="/service">SERVICE</Link></li>
+              <li><Link className="text-white hover:text-gray-300 transition" to="/blog">BLOG</Link></li>
+              {/* <li><Link className="text-white hover:text-gray-300 transition" to="/contact">CONTACT</Link></li> */}
+              <li><Link className="text-white hover:text-gray-300 transition" to="/store">JSEx STORE</Link></li>
             </ul>
+            <a className="ml-4 px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition" href="">LOGIN</a>
           </div>
-          <div className="login-btn hidden md:block">
-            <a className='pr-2 pl-2 pt-2 pb-2 bg-black text-white' href="">LOGIN</a>
-          </div>
-      
+
+          {/* Mobile Menu Toggle Button */}
           <div className="md:hidden">
             <button onClick={this.toggleMenu} className="text-white focus:outline-none">
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -45,19 +46,27 @@ class Nav extends Component {
             </button>
           </div>
         </div>
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <ul className="flex flex-col space-y-2 mt-2">
-              <li><Link className='text-white' to="/" onClick={this.toggleMenu}>HOME</Link></li>
-              <li><Link className='text-white' to="/about" onClick={this.toggleMenu}>ABOUT</Link></li>
-              <li><Link className='text-white' to="/service" onClick={this.toggleMenu}>SERVICE</Link></li>
-              <li><Link className='text-white' to="/blog" onClick={this.toggleMenu}>BLOG</Link></li>
-              <li><Link className='text-white' to="/contact" onClick={this.toggleMenu}>CONTACT</Link></li>
-              <li><Link className='text-white' to="/store" onClick={this.toggleMenu}>JSEx STORE</Link></li>
-              <li><a className='pr-2 pl-2 pt-2 pb-2 bg-black text-white' href="" onClick={this.toggleMenu}>LOGIN</a></li>
+
+        {/* Mobile Menu Overlay */}
+        <div
+          className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+          onClick={this.toggleMenu}
+        ></div>
+
+        {/* Mobile Menu */}
+        <div className={`fixed top-0 right-0 w-64 bg-gray-800 h-full transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out`}>
+          <div className="flex flex-col justify-center h-full">
+            <ul className="flex flex-col items-center space-y-4">
+              <li><Link className="text-white hover:text-gray-300 transition" to="/" onClick={this.toggleMenu}>HOME</Link></li>
+              <li><Link className="text-white hover:text-gray-300 transition" to="/about" onClick={this.toggleMenu}>ABOUT</Link></li>
+              <li><Link className="text-white hover:text-gray-300 transition" to="/service" onClick={this.toggleMenu}>SERVICE</Link></li>
+              <li><Link className="text-white hover:text-gray-300 transition" to="/blog" onClick={this.toggleMenu}>BLOG</Link></li>
+              {/* <li><Link className="text-white hover:text-gray-300 transition" to="/contact" onClick={this.toggleMenu}>CONTACT</Link></li> */}
+              <li><Link className="text-white hover:text-gray-300 transition" to="/store" onClick={this.toggleMenu}>JSEx STORE</Link></li>
+              <li><a className="px-4 py-2 bg-black text-white rounded hover:bg-gray-700 transition" href="" onClick={this.toggleMenu}>LOGIN</a></li>
             </ul>
           </div>
-        )}
+        </div>
       </nav>
     );
   }

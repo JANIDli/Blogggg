@@ -2,21 +2,31 @@
 <blogs>
     <blog>
         <id>1</id>
-        <title>First Blog Post</title>
-        <author>Author 1</author>
+        <title>Mastering Web Development: Essential Skills for 2024</title>
+        <author>Savi</author>
         <date>2024-10-30</date>
         <category>Technology</category>
-        <content>This is the content of the first blog post.</content>
-        <image>https://i.pinimg.com/736x/bb/4a/6d/bb4a6d17f7c4334697ad7ac008018789.jpg</image>
+        <content>T<p>Web development is a dynamic field that requires a diverse set of skills. From mastering JavaScript frameworks to understanding the principles of UX design, there's a lot to learn.</p>
+<h2 class="text-2xl font-semibold mb-3">Essential Skills for Modern Web Developers</h2>
+<p class="mb-4">In 2024, skills like proficiency in React, knowledge of serverless architecture, and expertise in cybersecurity are highly sought after. This blog will guide you through the essential skills you need to succeed in today's competitive job market.</p>
+<p class="mb-4">We'll also provide resources and tutorials to help you master these skills and stay ahead of the curve.</p>
+</content>
+        <image> https://i.pinimg.com/1200x/78/88/15/78881534bc83ec0438d7abff5b1839dd.jpg</image>
     </blog>
+
+    
     <blog>
         <id>2</id>
-        <title>Second Blog Post</title>
-        <author>Author 2</author>
+        <title>The Future of Web Development: Emerging Technologies and Skills</title>
+        <author>Janitha</author>
         <date>2024-10-31</date>
-        <category>Science</category>
-        <content>This is the content of the second blog post.</content>
-        <image>https://images.carandbike.com/bike-images/big/ktm/rc-200/ktm-rc-200.jpg?v=26</image>
+        <category>Technology</category>
+        <content><p>As we look ahead, the future of web development is brimming with exciting possibilities. From AI-driven development tools to the rise of Web3 technologies, staying updated with these trends is crucial for any developer.</p>
+        <h2 class="text-2xl font-semibold mb-3">Emerging Technologies in 2024</h2>
+        <p class="mb-4">Technologies like blockchain, AI, and quantum computing are set to revolutionize the web development landscape. Understanding these technologies will not only enhance your skill set but also open up new career opportunities.</p>
+        <p class="mb-4">In this blog, we'll explore these technologies in detail and provide practical tips on how to integrate them into your projects.</p>
+    </content>
+        <image>https://i.pinimg.com/1200x/70/cf/c2/70cfc200a1bab99d5c557cf152f0cdb7.jpg</image>
     </blog>
     <blog>
         <id>3</id>
@@ -30,6 +40,6 @@
             <p class="mb-4">The trends shaping web development in 2024 include advancements in AI integration, WebAssembly, responsive design improvements, and enhanced security protocols. Learning these technologies will give developers an edge in the ever-competitive tech industry.</p>
             <p class="mb-4">As we dive deeper, tutorials, tips, and tricks will help you become a successful web developer. Whether you're interested in frontend, backend, or full-stack development, these skills will help you build something amazing.</p>
         ]]></content>
-        <image>https://i.pinimg.com/736x/e2/35/d7/e235d7aa023d0c03310caeb2998daece.jpg</image>
+        <image>https://i.pinimg.com/1200x/36/d1/6a/36d16a8bc9597f727d31bf16b3d6872c.jpg</image>
     </blog>
 </blogs>

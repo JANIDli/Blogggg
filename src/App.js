@@ -7,6 +7,7 @@ import Registration from './Page/Registration';
 import { ThemeProvider } from './ThemeContext';
 import BlogPost from './Componant/BlogPost'; // Ensure the path is correct
 import SearchFilter from './Page/Blog';
+import Store from './Componant/Store';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           <Route exact path='register' element={<Registration />} />
           <Route exact path='blog' element={<SearchFilter />} /> {/* Updated path */}
           <Route exact path='blog/:id' element={<BlogPost />} /> {/* Dynamic route for blog post */}
+          <Route exact path='store' element={<Store />} /> {/* Dynamic route for blog post */}
+
         </Routes>
       </Router>
     </ThemeProvider>
