@@ -7,7 +7,8 @@ import Registration from './Page/Registration';
 import BlogList from './Page/BlogList';
 import Blog from './Page/Blog';
 import { ThemeProvider } from './ThemeContext'; // Import the ThemeProvider
-import BlogPost from './Componant/BlogPost';
+import BlogPost from './Componant/BlogPost'
+
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path='Blog' element={<BlogList />} />
           <Route exact path='test' element={<Blog />} />
           <Route exact path='BlogP' element={<BlogPost />} />
+
         </Routes>
       </Router>
     </ThemeProvider>

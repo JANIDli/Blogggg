@@ -438,7 +438,7 @@
   justify-content: center;
   align-items: center;
 }
-.Post-about{
+.intro {
   grid-column: 2/4;
   justify-content: center;
   align-items: center;
