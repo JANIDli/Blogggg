@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Nav from '../Componant/Nav';
 import Footer from '../Componant/Footer';
 import { Link } from 'react-router-dom';
-import Fade from 'react-reveal/Fade';
-import Zoom from 'react-reveal/Zoom';
+import { motion } from 'framer-motion';
 
 const SearchFilter = () => {
   const [blogs, setBlogs] = useState([]);
@@ -66,11 +65,15 @@ const SearchFilter = () => {
     <>
       <Nav />
       <div className="blog-header-container p-4 bg-gradient-to-r from-blue-500 to-purple-600">
-        <Fade top>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
           <h1 className='text-center text-3xl opacity-60 text-white font-bold'>
             Dive into our latest articles and insights, crafted to inspire and inform.
           </h1>
-        </Fade>
+        </motion.div>
       </div>
 
       <div className="search-filter-container p-4">
@@ -100,34 +103,38 @@ const SearchFilter = () => {
       <div className="blog-post-container grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
         {filteredBlogs.length > 0 ? (
           filteredBlogs.map((blog) => (
-            <Zoom key={blog.id}>
-              <div className="blog-one relative flex flex-col bg-white shadow-lg border border-gray-200 rounded-lg transition-transform transform hover:scale-105">
-                <div className="relative h-56 overflow-hidden text-white rounded-t-lg">
-                  {blog.image && <img src={blog.image} alt="blog post" className="object-cover w-full h-full" />}
-                </div>
-                <div className="p-4">
-                  <h6 className="text-gray-800 text-xl font-semibold">{blog.title}</h6>
-                  <p className="text-gray-600 font-light">{blog.content.substring(0, 100)}...</p>
-                  <p className="text-gray-600 text-sm">Category: {blog.category}</p>
-                  <p className="text-gray-600 text-sm">Author: {blog.author}</p>
-                  <p className="text-gray-600 text-sm">Date: {blog.date}</p>
-                </div>
-                <div className="group my-3 inline-flex flex-wrap justify-center items-center gap-2">
-                  {blog.id ? (
-                    <Link 
-                      to={`/blog/${blog.id}`} // Ensure valid path
-                      className="rounded-full border border-gray-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-gray-600 hover:text-white hover:bg-gray-800 hover:border-gray-800"
-                    >
-                      Read More
-                    </Link>
-                  ) : (
-                    <button className="rounded-full border border-gray-300 p-2.5 text-center text-sm transition-all shadow-sm text-gray-600" disabled>
-                      No Link Available
-                    </button>
-                  )}
-                </div>
+            <motion.div 
+              key={blog.id}
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="blog-one relative flex flex-col bg-white shadow-lg border border-gray-200 rounded-lg transition-transform transform hover:scale-105"
+            >
+              <div className="relative h-56 overflow-hidden text-white rounded-t-lg">
+                {blog.image && <img src={blog.image} alt="blog post" className="object-cover w-full h-full" />}
               </div>
-            </Zoom>
+              <div className="p-4">
+                <h6 className="text-gray-800 text-xl font-semibold">{blog.title}</h6>
+                <p className="text-gray-600 font-light">{blog.content.substring(0, 100)}...</p>
+                <p className="text-gray-600 text-sm">Category: {blog.category}</p>
+                <p className="text-gray-600 text-sm">Author: {blog.author}</p>
+                <p className="text-gray-600 text-sm">Date: {blog.date}</p>
+              </div>
+              <div className="group my-3 inline-flex flex-wrap justify-center items-center gap-2">
+                {blog.id ? (
+                  <Link 
+                    to={`/blog/${blog.id}`} // Ensure valid path
+                    className="rounded-full border border-gray-300 p-2.5 text-center text-sm transition-all shadow-sm hover:shadow-lg text-gray-600 hover:text-white hover:bg-gray-800 hover:border-gray-800"
+                  >
+                    Read More
+                  </Link>
+                ) : (
+                  <button className="rounded-full border border-gray-300 p-2.5 text-center text-sm transition-all shadow-sm text-gray-600" disabled>
+                    No Link Available
+                  </button>
+                )}
+              </div>
+            </motion.div>
           ))
         ) : (
           <p className="text-center text-gray-500">No blog posts found</p>
